@@ -6,15 +6,15 @@
 # - state: state os the package "latest,present,..". Optional, default: latest
 
 - name: "Install/Upgrade Debian packages: {{packages_name }}"
-  apt:
+  ansible.builtin.apt:
     name: "{{ packages }}"
-    state: "{{ state | default('latest') }}"
+    state: "{{ pkg_state | default('latest') }}"
   when:
     - ansible_os_family == "Debian"
 
 - name: "Install/Upgrade RHEL/CentOS/Rocky packages: {{ packages_name }}"
   yum:
     name: "{{ packages }}"
-    state: "{{ state | default('latest') }}"
+    state: "{{ pkg_state | default('latest') }}"
   when:
     - ansible_os_family in ['RedHat','Rocky']
