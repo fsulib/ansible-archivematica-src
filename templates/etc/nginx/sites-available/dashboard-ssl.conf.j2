@@ -31,7 +31,7 @@ server {
 server {
 
   listen 443 ssl;
-  server_name am.lib.fsu.edu;
+  server_name {{ archivematica_src_configure_am_site_url }};
 
   ssl_certificate  {{ archivematica_src_ssl_fullchain }};
   ssl_certificate_key {{ archivematica_src_ssl_privkey }};

@@ -26,7 +26,7 @@ server {
 server {
 
     listen 443 ssl;
-    server_name am-store.lib.fsu.edu;
+    server_name {{ archivematica_src_configure_ss_url }};
     {% if archivematica_src_syslog_enabled|bool %}
     error_log syslog:server={{ archivematica_src_syslog_server }},tag=storage info;
     access_log syslog:server={{ archivematica_src_syslog_server }},tag=storage combined;
