@@ -31,7 +31,7 @@ server {
 server {
 
   listen 443 ssl;
-  server_name {{ archivematica_src_configure_am_site_url }};
+  server_name {{ am_params.dash_dns_name }};
 
   ssl_certificate  {{ archivematica_src_ssl_fullchain }};
   ssl_certificate_key {{ archivematica_src_ssl_privkey }};
